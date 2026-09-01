@@ -1,5 +1,6 @@
 class Solution {
     public boolean containsDuplicate(int[] nums) {
+       //brute force
     //    for(int i =0;i<nums.length;i++){
     //         for(int j =i+1;j<nums.length;j++){
     //             if(nums[i] == nums[j]){
@@ -8,7 +9,7 @@ class Solution {
     //         }
     //     }
     //     return false;
-
+        //optimise approch
         HashSet<Integer> ans = new HashSet<>();
         for(int num:nums){
             if(ans.contains(num)){
