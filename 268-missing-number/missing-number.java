@@ -1,24 +1,25 @@
 class Solution {
     public int missingNumber(int[] nums) {
-        // hashset
-        // HashSet<Integer> hs = new HashSet<>();
-        // for(int i =1;i<nums.length;i++){
-        //     hs.add(i);
-        // }
-        // for(int i =0;i<nums.length;i++){
-        //     if(!hs.contains(nums[i]))
-        //         return nums[i];
-        // }
+        // Hashset
+        HashSet<Integer> hs = new HashSet<>();
+        for(int i =0;i<nums.length;i++){
+            hs.add(nums[i]);
+        }
+        for(int i =0;i<nums.length;i++){
+            if(!hs.contains(i))
+                return i;
+        }
+        return nums.length;
          
         // using sort 
 
-        Arrays.sort(nums);
-        for(int i =0;i<nums.length;i++){
-            if(nums[i] != i){
-                return i;
-            }
-        }
-        return nums.length;
+        // Arrays.sort(nums);
+        // for(int i =0;i<nums.length;i++){
+        //     if(nums[i] != i){
+        //         return i;
+        //     }
+        // }
+        // return nums.length;
 
     }
 }
