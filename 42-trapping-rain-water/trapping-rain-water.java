@@ -15,7 +15,7 @@ class Solution {
         //     res += Math.min(left,right)- height[i]; 
         // }
 
-        // return res;
+        // return res; (this will give tle)
 
         int[] left = new int[height.length];
         int[] right = new int[height.length];
