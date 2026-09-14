@@ -4,7 +4,7 @@ class Solution {
         int start = 0,end = 0;
         boolean[] isVisited = new boolean[128];
         while(end<s.length()){
-            while(isVisited[s.charAt(end)] == true){
+            while(isVisited[s.charAt(end)]){
                 isVisited[s.charAt(start)] = false;
                 start++;
             }
