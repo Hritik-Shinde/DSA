@@ -27,9 +27,11 @@ class Solution {
                 if(i-map.get(reminder) >= 2){
                     return true;
                 }
+            }else{
+                map.put(reminder,i);
             }
 
-            map.putIfAbsent(reminder,i);
+            
         }
         return false;
     }
