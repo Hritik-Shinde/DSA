@@ -4,7 +4,7 @@ class Solution {
             return intervals;
         }
         // sort by starting index
-        Arrays.sort(intervals,Comparator.comparingInt(a -> a[0]));
+        Arrays.sort(intervals,(a,b) -> Integer.compare(a[0],b[0]));
         List<int[]> result = new ArrayList<>();
         int[] newInterval = intervals[0];
         for(int[] interval: intervals){
