@@ -8,9 +8,13 @@ class Solution {
             int[] interval = intervals[i];
             if(newInterval[1]>interval[0]){
                 count++;
-                interval[1] = Math.min(newInterval[1],interval[1]);
-            }
-            newInterval=interval;
+                if(interval[1]<newInterval[1]){
+                     newInterval = interval;
+                }
+               
+            }else{
+                newInterval=interval;
+                } 
         }
         return count;
     }
