@@ -1,19 +1,18 @@
 class Solution {
     public int diagonalSum(int[][] mat) {
-        int primaryDiagonalSum =0;
+        int sum =0;
         for(int row =0;row<mat.length;row++){
-                primaryDiagonalSum += mat[row][row];
+                sum += mat[row][row];
             
         }
 
-        int secondaryDiagonal =0;
         int col = mat.length-1;
         for(int row=0;row<mat.length;row++){
-            secondaryDiagonal += mat[row][col];
+            sum += mat[row][col];
             col--;
         }
 
-        return (mat.length%2)!=0 ? primaryDiagonalSum+secondaryDiagonal - mat[mat.length/2][mat.length/2] :  primaryDiagonalSum+secondaryDiagonal;
+        return (mat.length%2)!=0 ? sum - mat[mat.length/2][mat.length/2] :  sum;
 
         
     }
