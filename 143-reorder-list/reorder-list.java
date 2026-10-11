@@ -10,44 +10,41 @@
  */
 class Solution {
     public void reorderList(ListNode head) {
-         if (head == null || head.next == null) {
+
+        if(head == null || head.next == null){
             return;
         }
-
-        // Step 1: Find the middle
         ListNode slow = head;
         ListNode fast = head;
 
-        while (fast.next != null && fast.next.next != null) {
+        while(fast != null && fast.next != null){
             slow = slow.next;
             fast = fast.next.next;
         }
 
-        // Step 2: Reverse the second half
         ListNode second = slow.next;
         slow.next = null;
+        // reverse the second link list
+        
         ListNode prev = null;
-
-        while (second != null) {
+        while(second != null){
             ListNode temp = second.next;
             second.next = prev;
             prev = second;
-            second = temp;
+            second  = temp;
         }
 
-        // Step 3: Merge both halves
+        // now start mergenging the linklist
         ListNode first = head;
-        second = prev;
-
-        while (second != null) {
+        while(prev != null){
             ListNode temp1 = first.next;
-            ListNode temp2 = second.next;
+            ListNode temp2 = prev.next;
 
-            first.next = second;
-            second.next = temp1;
+            first.next = prev;
+            prev.next = temp1;
 
             first = temp1;
-            second = temp2;
+            prev = temp2; 
         }
     }
-    }
+}
